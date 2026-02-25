@@ -1,0 +1,34 @@
+K3s High Availability (HA) Installation Guide
+
+Platform: Alpine Linux (OpenRC)
+Mode: Embedded etcd
+Topology: 3 Control Plane Nodes
+
+1. Architecture Overview
+1.1 Target Topology
+Node	IP Address	Role
+k3s-server-1	10.0.0.10	Control Plane + etcd
+k3s-server-2	10.0.0.11	Control Plane + etcd
+k3s-server-3	10.0.0.12	Control Plane + etcd
+
+Optional:
+
+Worker nodes
+
+External Load Balancer (recommended for production)
+
+2. System Requirements
+2.1 Minimum Requirements (Per Control Plane Node)
+2 vCPU
+2 GB RAM (minimum)
+20 GB disk
+Static IP address
+Time synchronization enabled
+Required ports open
+
+2.2 Required Open Ports
+Port	Protocol	Purpose
+6443	TCP	Kubernetes API
+2379-2380	TCP	etcd
+10250	TCP	kubelet
+8472	UDP	Flannel VXLAN
