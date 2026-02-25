@@ -1,0 +1,63 @@
+# 🚀 K3s Kubernetes Cluster on Alpine Linux (VirtualBox Home Lab)
+
+This project documents a lightweight Kubernetes home lab built using:
+
+- 🐧 Alpine Linux
+- ☸️ K3s (Lightweight Kubernetes)
+- 🖥 VirtualBox
+- 🏠 Local Home Lab Environment
+
+The goal is to create a minimal, resource-efficient Kubernetes cluster for DevOps practice, experimentation, and learning.
+
+---
+
+# 📌 Architecture Overview
+
+- 1x K3s Server (Control Plane)
+- 1+ K3s Agent Nodes (Workers)
+- Host-only or Bridged VirtualBox Networking
+- Optional: Traefik Ingress (default in K3s)
+
+---
+
+# 🏗️ Infrastructure Design
+
+---
+
+# 💻 VM Requirements
+
+| Node Type | CPU | RAM | Disk |
+|-----------|-----|-----|------|
+| Server    | 2   | 2GB | 20GB |
+| Agent     | 2   | 2GB | 20GB |
+
+Minimum recommended total host RAM: **8GB**
+
+---
+
+# 🌐 Networking Setup (VirtualBox)
+
+Recommended: **Host-Only Adapter + NAT**
+
+Example configuration:
+
+- Adapter 1: NAT (Internet Access)
+- Adapter 2: Host-Only (Cluster Communication)
+
+Example IP scheme:
+
+| Node        | IP Address     |
+|------------|---------------|
+| k3s-server | 192.168.56.10 |
+| k3s-agent1 | 192.168.56.11 |
+
+---
+
+# 🐧 Alpine Linux Installation
+
+Install minimal Alpine Linux ISO on each VM.
+
+After installation:
+
+setup-alpine
+  
